@@ -1,0 +1,7 @@
+{
+  "name": "iplab4",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Лабораторна робота №4",
+  "main": "app.js"
+}
