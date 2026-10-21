@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна 2 - Завдання 1 (Введення через prompt)</title>
+</head>
+<body>
+  <h1>Завдання 1 (Введення значень через prompt)</h1>
+  <script src="lab2-1.js"></script>
+  <script>
+    // 1. Перевірка цілого числа
+    let inputNum = prompt("Введіть число для перевірки на ціле (isInteger):", "");
+    if (inputNum !== null && inputNum.trim() !== "") {
+      let num = parseFloat(inputNum);
+      alert("Число " + num + " є цілим: " + isInteger(num));
+    }
+
+    // 2. Пошук простих чисел
+    let aStr = prompt("Початок інтервалу для простих чисел (a):", "");
+    let bStr = prompt("Кінець інтервалу для простих чисел (b):", "");
+    if (aStr !== null && bStr !== null && aStr.trim() !== "" && bStr.trim() !== "") {
+      let a = parseFloat(aStr);
+      let b = parseFloat(bStr);
+      let primes = findPrimes(a, b);
+      alert("Прості числа на інтервалі [" + a + ", " + b + "]:\n" + (primes.length ? primes.join(", ") : "не знайдено"));
+    }
+
+    location.href = "index.html";
+  </script>
+</body>
+</html>

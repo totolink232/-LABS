@@ -2,20 +2,73 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Лабораторна робота №1</title>
+  <title>Лабораторна робота №2</title>
 </head>
 <body>
-  <h1>Лабораторна робота №1</h1>
+  <h1>Лабораторна робота №2</h1>
+  <p><strong>Тема:</strong> Особливості виконання операцій та операторів у мові JavaScript. Типи даних. Приведення типів.</p>
+
+  <h2>Практичні завдання:</h2>
   <ul>
-    <li><a href="0.html">Завдання 0</a></li>
-    <li><a href="1.html">Завдання 1</a></li>
-    <li><a href="2.html">Завдання 2</a></li>
-    <li><a href="3.html">Завдання 3</a></li>
-    <li><a href="4.html">Завдання 4</a></li>
-    <li><a href="5.html">Завдання 5</a></li>
-    <li><a href="6.html">Завдання 6</a></li>
-    <li><a href="7.html">Завдання 7</a></li>
-    <li><a href="8.html">Завдання 8</a></li>
+    <li>
+      <strong>Завдання 1 (isInteger, findPrimes):</strong>
+      <ul>
+        <li><a href="lab2-1.html">lab2-1.html</a> — Автодемонстрація тестів (за методичкою)</li>
+        <li><a href="lab2-1-prompt.html">lab2-1-prompt.html</a> — Інтерактивне введення через prompt</li>
+      </ul>
+    </li>
+    <br>
+    <li>
+      <strong>Завдання 2 (Регулярні вирази):</strong>
+      <ul>
+        <li><a href="lab2-2.html">lab2-2.html</a> — Автодемонстрація тестів (за методичкою)</li>
+        <li><a href="lab2-2-prompt.html">lab2-2-prompt.html</a> — Інтерактивне введення через prompt</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Відповіді на завдання для самоперевірки:</h2>
+
+  <h3>2.1. Значення на екрані:</h3>
+  <p>Послідовно будуть виведені: <strong>3, 3, 6, 6, 4, 5</strong></p>
+
+  <h3>2.2. Значення x:</h3>
+  <p><strong>x = 5</strong> (оскільки <code>a *= 2</code> робить <code>a = 4</code>, отже <code>1 + 4 = 5</code>)</p>
+
+  <h3>2.3. Логічні оператори та розгалуження:</h3>
+  <ul>
+    <li><code>null || 2 || undefined</code> → <strong>2</strong> (перше істинне значення)</li>
+    <li><code>alert(1) || 2 || alert(3)</code> → виведе <strong>1</strong>, потім <strong>2</strong> (<code>alert(1)</code> повертає <code>undefined</code>, після чого повертається <code>2</code>)</li>
+    <li><code>1 && null && 2</code> → <strong>null</strong> (перше хибне значення)</li>
+    <li><code>alert(1) && alert(2)</code> → виведе <strong>1</strong>, потім <strong>undefined</strong> (<code>alert(1)</code> є <code>undefined</code>, на ньому зупиняється)</li>
+    <li><code>null || 2 && 3 || 4</code> → <strong>3</strong> (пріоритет у <code>&&</code>: <code>2 && 3</code> дає <code>3</code>, далі <code>null || 3 || 4</code> дає <code>3</code>)</li>
+    <li><code>if (-1 || 0) alert('первое')</code> → виведе <strong>'первое'</strong> (<code>-1</code> є truthy)</li>
+    <li><code>if (-1 && 0) alert('второе')</code> → <strong>не виведеться</strong> (<code>0</code> є falsy)</li>
+    <li><code>if (null || -1 && 1) alert('третье')</code> → виведе <strong>'третье'</strong> (<code>-1 && 1</code> дає <code>1</code>, це truthy)</li>
+  </ul>
+
+  <h3>2.4. Значення і типи виразів:</h3>
+  <ul>
+    <li><code>"" + 1 + 0</code> → <strong>"10"</strong> (string)</li>
+    <li><code>"" - 1 + 0</code> → <strong>-1</strong> (number)</li>
+    <li><code>true + false</code> → <strong>1</strong> (number)</li>
+    <li><code>6 / "3"</code> → <strong>2</strong> (number)</li>
+    <li><code>"2" * "3"</code> → <strong>6</strong> (number)</li>
+    <li><code>4 + 5 + "px"</code> → <strong>"9px"</strong> (string)</li>
+    <li><code>"$" + 4 + 5</code> → <strong>"$45"</strong> (string)</li>
+    <li><code>"4" - 2</code> → <strong>2</strong> (number)</li>
+    <li><code>"4px" - 2</code> → <strong>NaN</strong> (number)</li>
+    <li><code>7 / 0</code> → <strong>Infinity</strong> (number)</li>
+    <li><code>"  -9\n" + 5</code> → <strong>"  -9\n5"</strong> (string)</li>
+    <li><code>"  -9\n" - 5</code> → <strong>-14</strong> (number)</li>
+    <li><code>5 && 2</code> → <strong>2</strong> (number)</li>
+    <li><code>2 && 5</code> → <strong>5</strong> (number)</li>
+    <li><code>5 || 0</code> → <strong>5</strong> (number)</li>
+    <li><code>0 || 5</code> → <strong>5</strong> (number)</li>
+    <li><code>null + 1</code> → <strong>1</strong> (number)</li>
+    <li><code>undefined + 1</code> → <strong>NaN</strong> (number)</li>
+    <li><code>null == "\n0\n"</code> → <strong>false</strong> (boolean)</li>
+    <li><code>+null == +"\n0\n"</code> → <strong>true</strong> (boolean: <code>0 == 0</code>)</li>
   </ul>
 </body>
 </html>

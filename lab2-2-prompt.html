@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна 2 - Завдання 2 (Введення через prompt)</title>
+</head>
+<body>
+  <h1>Завдання 2 (Введення значень через prompt)</h1>
+  <script src="lab2-2.js"></script>
+  <script>
+    // 1. IP адреса
+    let ip = prompt("Введіть IP-адресу для перевірки:", "");
+    if (ip !== null && ip.trim() !== "") {
+      alert("IP '" + ip + "' є коректною: " + isIPAddress(ip));
+    }
+
+    // 2. RGBA колір
+    let rgbaText = prompt("Введіть текст із кольором rgba(...):", "");
+    if (rgbaText !== null && rgbaText.trim() !== "") {
+      alert("Знайдений RGBA: " + findRGBA(rgbaText));
+    }
+
+    // 3. HEX колір
+    let hexText = prompt("Введіть текст із HEX-кольором (#ABC або #ABCDEF):", "");
+    if (hexText !== null && hexText.trim() !== "") {
+      alert("Знайдений HEX: " + findHexColor(hexText));
+    }
+
+    // 4. Пошук тегів
+    let htmlText = prompt("Введіть HTML текст для пошуку тегів:", "");
+    if (htmlText !== null && htmlText.trim() !== "") {
+      let tag = prompt("Який тег шукати?", "");
+      if (tag !== null && tag.trim() !== "") {
+        let tags = findTags(htmlText, tag);
+        alert("Знайдені теги <" + tag + ">:\n" + (tags.length ? tags.join(", ") : "не знайдено"));
+      }
+    }
+
+    // 5. Додатні числа
+    let numText = prompt("Введіть рядок із числами:", "");
+    if (numText !== null && numText.trim() !== "") {
+      alert("Знайдені додатні числа:\n" + findPosNum(numText).join(", "));
+    }
+
+    // 6. Дати
+    let dateText = prompt("Введіть текст із датами РРРР-ММ-ДД:", "");
+    if (dateText !== null && dateText.trim() !== "") {
+      alert("Знайдені дати:\n" + findDates(dateText).join(", "));
+    }
+
+    location.href = "index.html";
+  </script>
+</body>
+</html>

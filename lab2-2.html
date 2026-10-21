@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота №2 - Завдання 2</title>
+</head>
+<body>
+  <h1>Завдання 2: Регулярні вирази</h1>
+  <script src="lab2-2.js"></script>
+  <script>
+    alert("isIPAddress('127.0.0.1'): " + isIPAddress("127.0.0.1") + 
+          "\nisIPAddress('256.0.0.1'): " + isIPAddress("256.0.0.1"));
+
+    alert("findRGBA('колір rgba(255, 0, 128, 0.5);'): " + 
+          findRGBA("колір rgba(255, 0, 128, 0.5);"));
+
+    alert("findHexColor('колір #abc та #123456'): " + 
+          findHexColor("колір #abc та #123456"));
+
+    let html = '<div><img src="cat.jpg"> текст <img src="dog.png"/></div>';
+    alert("findTags (img): " + findTags(html, "img").join(" , "));
+
+    alert("findPosNum('10, -5, 0, 25.5, -100, 42'): " + 
+          findPosNum("10, -5, 0, 25.5, -100, 42").join(", "));
+
+    alert("findDates('Дати: 2026-10-21 та 1999-01-01'): " + 
+          findDates("Дати: 2026-10-21 та 1999-01-01").join(", "));
+
+    location.href = "index.html";
+  </script>
+</body>
+</html>
