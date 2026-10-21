@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 3</title>
+</head>
+<body>
+<script>
+  // Цикл let i = 0; while (i != 10) { i += 0.2; } стає безкінечним,
+  // тому що через дробову похибку значення i перескакує 10 (стає 9.999999999999996, а потім 10.199999999999996).
+  // Виправлення:
+  let i = 0;
+  while (i < 9.9) {
+    i += 0.2;
+  }
+  alert( i );
+
+  location.href = "index.html";
+</script>
+</body>
+</html>
